@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm install -g pnpm
+  pre_build:
+    commands:
+      - pnpm install
+  build:
+    commands:
+      - pnpm run build
+      - aws s3 sync dist s3://spacebitsdotcom
+  post_build:
+    commands:
+      - bash -c "if [ \"$CODEBUILD_BUILD_SUCCEEDING\" == \"0\" ]; then exit 1; fi"
+      - aws cloudfront create-invalidation --distribution-id E27NMC5UIA7ZLG --paths "/*"

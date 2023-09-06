@@ -20,8 +20,8 @@ export default function Home() {
 						<li>Upcoming launches</li>
 					</ul>
 					<p className="text-gray-600 mt-6 text-lg leading-8">
-						Note - "currently working" just means there's data. Layout and styling is still a work in
-						progress.
+						Note - &quot;currently working&quot; just means there&apos;s data. Layout and styling is still a
+						work in progress.
 					</p>
 				</div>
 			</div>

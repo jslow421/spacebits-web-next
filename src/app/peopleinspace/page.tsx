@@ -1,13 +1,13 @@
 "use client";
 import { Configuration } from "@/.configuration";
-import Spinner from "@/components/spinner";
+import Loading from "@/components/loading";
 import { PeopleInSpaceModel } from "@/models/peopleModel";
 import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function PeopleInSpace() {
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	const [peopleModel, setPeopleModel] = useState<PeopleInSpaceModel>({
 		message: "",
 		number: 0,
@@ -38,9 +38,7 @@ export default function PeopleInSpace() {
 
 	return (
 		<div>
-			<span className={`hidden ${isLoading ? "" : "hidden"}`}>
-				<Spinner />
-			</span>
+			<Loading isLoading={isLoading} />
 			<ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-5">
 				{peopleModel?.people?.map((person) => (
 					<li key={person.name} className="divide-gray-200 col-span-1 divide-y rounded-lg bg-white shadow">

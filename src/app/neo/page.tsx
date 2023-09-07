@@ -1,5 +1,5 @@
 "use client";
-import Spinner from "@/components/spinner";
+import Loading from "@/components/loading";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -7,7 +7,7 @@ import { Configuration } from "../../.configuration";
 import { NearEarthObjects } from "../../models/neoModel";
 
 export default function NeoPage() {
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	const [neoModel, setNeoModel] = useState<NearEarthObjects>({
 		data: {
 			element_count: 0,
@@ -45,11 +45,7 @@ export default function NeoPage() {
 
 	return (
 		<div>
-			{isLoading ? (
-				<span>
-					<Spinner />
-				</span>
-			) : null}
+			<Loading isLoading={isLoading} />
 			<div className={`container mx-auto bg-white px-4 sm:px-6 lg:px-8 ${isLoading ? " hidden" : ""}`}>
 				<div className="-mx-4 mt-8 sm:-mx-0">
 					<table className="divide-gray-300 min-w-full divide-y">

@@ -1,6 +1,6 @@
 "use client";
 import { Configuration } from "@/.configuration";
-import Spinner from "@/components/spinner";
+import Loading from "@/components/loading";
 import { getImageForType, getRocketType } from "@/models/rockets";
 import { UpcomingLaunches } from "@/models/upcomingLaunchModel";
 import axios from "axios";
@@ -8,10 +8,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function UpcomingLaunchesView() {
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	const [launchesModel, setLaunchesModel] = useState<UpcomingLaunches>();
 
 	async function retrieveUpcomingLaunches() {
+		setIsLoading(true);
 		try {
 			const resp = await axios.get(Configuration.UPCOMING_LAUNCHES_URL, {
 				headers: {
@@ -29,15 +30,12 @@ export default function UpcomingLaunchesView() {
 	}
 
 	useEffect(() => {
-		setIsLoading(true);
 		retrieveUpcomingLaunches();
 	}, []);
 
 	return (
 		<div>
-			<span className={`hidden ${isLoading ? "" : "hidden"}`}>
-				<Spinner />
-			</span>
+			<Loading isLoading={isLoading} />
 			<ul role="list" className="divide-y divide-gray-100 md:px-10 sm:px-0">
 				{launchesModel?.launches?.result.map((launch) => (
 					<li key={launch.id} className="flex justify-between gap-x-6 py-5">

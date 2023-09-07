@@ -2,7 +2,8 @@
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import React, { useState } from "react";
+import Link from "next/link";
+import { useState } from "react";
 import { Features } from "~/features";
 
 const navigation = [
@@ -24,12 +25,12 @@ export default function Navbar() {
 	return (
 		<header className="mb-2 bg-gray-800">
 			<nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-				<a href="/">
+				<Link href="/">
 					<div className="-m-1.5 p-1.5">
 						<span className="sr-only">SpaceBits</span>
 						<Image className="h-8 w-auto" src="/apple-touch-icon.png" width={100} height={100} alt="" />
 					</div>
-				</a>
+				</Link>
 				<div className="flex lg:hidden">
 					<button
 						type="button"
@@ -42,14 +43,14 @@ export default function Navbar() {
 				</div>
 				<div className="hidden lg:flex lg:gap-x-12">
 					{navigation.map((item) => (
-						<a
+						<Link
 							key={item.name}
 							className="text-sm font-semibold leading-6 text-white"
 							onClick={() => setMobileMenuOpen(false)}
 							href={item.path}
 						>
 							{item.name}
-						</a>
+						</Link>
 					))}
 				</div>
 			</nav>
@@ -60,7 +61,7 @@ export default function Navbar() {
                 bg-white px-6 py-6 sm:max-w-sm sm:ring-1"
 				>
 					<div className="flex items-center justify-between">
-						<a href="/" className="-m-1.5 p-1.5">
+						<Link href="/" className="-m-1.5 p-1.5">
 							<span className="sr-only">SpaceBits</span>
 							<Image
 								className="h-8 w-auto focus-visible:outline-none"
@@ -69,7 +70,7 @@ export default function Navbar() {
 								width={100}
 								height={100}
 							/>
-						</a>
+						</Link>
 						<button
 							type="button"
 							className="text-gray-700 -m-2.5 rounded-md p-2.5"
@@ -83,7 +84,7 @@ export default function Navbar() {
 						<div className="divide-gray-500/10 -my-6 divide-y">
 							<div className="space-y-2 py-6">
 								{navigation.map((item) => (
-									<a
+									<Link
 										key={item.name}
 										className="text-gray-900 hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2
                                         font-semibold leading-7 text-base"
@@ -91,7 +92,7 @@ export default function Navbar() {
 										href={item.path}
 									>
 										{item.name}
-									</a>
+									</Link>
 								))}
 							</div>
 						</div>

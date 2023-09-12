@@ -1,6 +1,14 @@
-import Image from "next/image";
-
+"use client";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { use, useEffect } from "react";
 export default function Home() {
+	const pathName = usePathname();
+	const router = useRouter();
+
+	useEffect(() => {
+		router.replace(pathName);
+	}, [pathName, router]);
+
 	return (
 		<div className="relative isolate px-6 pt-14 lg:px-8">
 			<div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">

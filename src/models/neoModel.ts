@@ -18,7 +18,7 @@ export class Link {
 export class NearEarthObject {
 	id: string | undefined;
 	name: string | undefined;
-	nasa_jpl_url: string | undefined;
+	nasa_jpl_url: string = "";
 	absolute_magnitude_h: number | undefined;
 	estimated_diameter: EstimatedDiameter | undefined;
 	is_potentially_hazardous_asteroid: boolean | undefined;

@@ -1,6 +1,6 @@
 "use client";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { use, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 export default function Home() {
 	const pathName = usePathname();
 	const router = useRouter();

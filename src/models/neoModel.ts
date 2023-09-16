@@ -1,6 +1,6 @@
 export class NearEarthObjects {
-	updated_date_time: string | undefined;
-	data: NearEarthObjectData | undefined;
+	updated_date_time?: string | undefined;
+	data?: NearEarthObjectData | undefined;
 }
 
 export class NearEarthObjectData {

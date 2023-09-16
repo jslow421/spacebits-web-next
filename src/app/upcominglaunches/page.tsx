@@ -34,20 +34,23 @@ export default function UpcomingLaunchesView() {
 	}, []);
 
 	return (
-		<div>
+		<div className="container md:mx-auto">
 			<Loading isLoading={isLoading} />
 			<ul role="list" className="divide-y divide-gray-100 md:px-10 sm:px-0">
 				{launchesModel?.launches?.result.map((launch) => (
-					<li key={launch.id} className="flex justify-between gap-x-6 py-5">
-						<div className="flex gap-x-4">
-							<Image
-								className="h-12 w-12 flex-none rounded-full bg-gray-50"
-								src={getImageForType(getRocketType(launch.vehicle.name))}
-								alt=""
-								height={48}
-								width={48}
-							/>
-							<div className="min-w-0 flex-auto">
+					<li key={launch.id} className="justify-between gap-x-6 py-5">
+						<div className="lg:flex lg:h-full lg:w-full lg:mr-2 lg:pr-2">
+							<div className="">
+								<Image
+									className="h-12 w-12 flex-none rounded-full bg-gray-50"
+									src={getImageForType(getRocketType(launch.vehicle.name))}
+									alt=""
+									height={48}
+									width={48}
+								/>
+								<p className="text-sm leading-6 text-gray-900">{launch.date_str}</p>
+							</div>
+							<div className="lg:ml-3">
 								<p className="text-sm font-semibold leading-6 text-gray-900">{launch.name}</p>
 								<p className="mt-1 truncate text-xs leading-5 text-gray-500">
 									{launch.vehicle.name} - {launch.provider.name}
@@ -61,9 +64,6 @@ export default function UpcomingLaunchesView() {
 									</p>
 								)}
 							</div>
-						</div>
-						<div className="sm:flex sm:flex-col sm:items-end">
-							<p className="text-sm leading-6 text-gray-900">{launch.date_str}</p>
 						</div>
 					</li>
 				))}

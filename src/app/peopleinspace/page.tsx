@@ -48,8 +48,8 @@ export default function PeopleInSpace() {
 									<h3 className="text-gray-900 truncate text-sm font-medium">{person.name}</h3>
 									<span
 										className="bg-green-50 text-green-700 ring-green-600/20 inline-flex
-										 flex-shrink-0 items-center rounded-full px-1.5 py-0.5 text-xs font-medium
-										 ring-1 ring-inset"
+											flex-shrink-0 items-center rounded-full px-1.5 py-0.5 text-xs font-medium
+											ring-1 ring-inset"
 									>
 										{person.craft}
 									</span>

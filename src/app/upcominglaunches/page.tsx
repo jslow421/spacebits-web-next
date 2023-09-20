@@ -22,9 +22,9 @@ export default function UpcomingLaunchesView() {
 			});
 
 			setLaunchesModel(resp.data);
-			setIsLoading(false);
 		} catch (e) {
 			console.warn(e);
+		} finally {
 			setIsLoading(false);
 		}
 	}

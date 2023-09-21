@@ -40,7 +40,7 @@ export default function NeoPage() {
 	}
 
 	useEffect(() => {
-		document.title = "SpaceBits - Near Earth Objects";
+		document.title = "Near Earth Objects - SpaceBits";
 		retrieveNeo();
 	}, []);
 

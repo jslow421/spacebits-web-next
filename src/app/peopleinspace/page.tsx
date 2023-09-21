@@ -32,7 +32,7 @@ export default function PeopleInSpace() {
 	}
 
 	useEffect(() => {
-		document.title = "SpaceBits - People in Space";
+		document.title = "People In Space - SpaceBits";
 		setIsLoading(true);
 		retrievePeople();
 	}, []);

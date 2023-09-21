@@ -6,7 +6,7 @@ export default function Home() {
 	const router = useRouter();
 
 	useEffect(() => {
-		document.title = "SpaceBits - Home";
+		document.title = "SpaceBits";
 		router.replace(pathName);
 	}, [pathName, router]);
 

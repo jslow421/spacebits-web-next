@@ -1,3 +1,6 @@
+/**
+ * Configuration class for the application.
+ */
 export class Configuration {
 	static readonly API_KEY = "9Qr0KgdEeX8HJtutvYnXh1kzPez4JeED3CBMJDJe";
 	static readonly BASE_URL = "https://api.spacebits.net";

@@ -6,12 +6,13 @@ export default function Home() {
 	const router = useRouter();
 
 	useEffect(() => {
+		document.title = "SpaceBits - Home";
 		router.replace(pathName);
 	}, [pathName, router]);
 
 	return (
-		<div className="relative isolate px-6 pt-14 lg:px-8">
-			<div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+		<div className="relative isolate px-6 lg:pt-14 pt-1 lg:px-8">
+			<div className="mx-auto max-w-2xl py-1 lg:py-56">
 				<div className="text-center">
 					<h1 className="text-gray-900 text-4xl font-bold tracking-tight sm:text-6xl">SpaceBits</h1>
 					<p className="text-gray-600mt-6 text-lg leading-8">

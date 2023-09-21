@@ -1,10 +1,10 @@
 "use client";
+import { Configuration } from "@/.configuration";
 import Loading from "@/components/loading";
+import { NearEarthObjects } from "@/models/neoModel";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Configuration } from "@/.configuration";
-import { NearEarthObjects } from "@/models/neoModel";
 
 export default function NeoPage() {
 	const [isLoading, setIsLoading] = useState(true);
@@ -40,6 +40,7 @@ export default function NeoPage() {
 	}
 
 	useEffect(() => {
+		document.title = "SpaceBits - Near Earth Objects";
 		retrieveNeo();
 	}, []);
 

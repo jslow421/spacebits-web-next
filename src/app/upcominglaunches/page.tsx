@@ -30,6 +30,7 @@ export default function UpcomingLaunchesView() {
 	}
 
 	useEffect(() => {
+		document.title = "SpaceBits - Upcoming Launches";
 		retrieveUpcomingLaunches();
 	}, []);
 

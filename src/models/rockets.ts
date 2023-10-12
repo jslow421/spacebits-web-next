@@ -1,5 +1,6 @@
 export enum RocketType {
 	Falcon9 = "Falcon 9",
+	FalconHeavy = "Falcon Heavy",
 	Ariane5 = "Ariane 5",
 	Delta4Heavy = "Delta IV Heavy",
 	Soyuz2 = "Soyuz-2",
@@ -19,6 +20,8 @@ export function getImageForType(rocket: RocketType): string {
 	switch (rocket) {
 		case RocketType.Falcon9:
 			return "/rockets/falcon9.jpg";
+		case RocketType.FalconHeavy:
+			return "/rockets/falcon-heavy.jpg";
 		case RocketType.Ariane5:
 			return "/rockets/ariane5.jpg";
 		case RocketType.Delta4Heavy:
@@ -48,6 +51,8 @@ export function getRocketType(rocketName: string): RocketType {
 	switch (rocketName) {
 		case "Falcon 9":
 			return RocketType.Falcon9;
+		case "Falcon Heavy":
+			return RocketType.FalconHeavy;
 		case "Ariane 5":
 			return RocketType.Ariane5;
 		case "Delta IV Heavy":

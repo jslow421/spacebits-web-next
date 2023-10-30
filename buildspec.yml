@@ -5,13 +5,12 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
-      - npm install -g pnpm
   pre_build:
     commands:
-      - pnpm install
+      - npm install
   build:
     commands:
-      - pnpm next build
+      - npm run build
       - aws s3 sync out s3://spacebitsdotcom
   post_build:
     commands:

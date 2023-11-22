@@ -12,6 +12,7 @@ export enum RocketType {
 	LongMarch7a = "Long March 7A",
 	Kinetica1 = "Kinetica-1",
 	NewShepard = "New Shepard",
+	Electron = "Electron",
 	Generic = "Generic",
 }
 
@@ -47,6 +48,8 @@ export function getImageForType(rocket: RocketType): string {
 			return "/rockets/kinetica1.jpg";
 		case RocketType.NewShepard:
 			return "/rockets/new_shepard.jpg";
+		case RocketType.Electron:
+			return "/rockets/electron.jpeg";
 		default:
 			return "/rockets/generic.jpg";
 	}
@@ -84,6 +87,8 @@ export function getRocketType(rocketName: string): RocketType {
 			return RocketType.Kinetica1;
 		case "New Shepard":
 			return RocketType.NewShepard;
+		case "Electron":
+			return RocketType.Electron;
 		default:
 			return RocketType.Generic;
 	}

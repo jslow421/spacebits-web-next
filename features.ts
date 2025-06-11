@@ -1,7 +1,7 @@
 export class Features {
 	static readonly isNeoEnabled = true;
 	static readonly isUpcomingLaunchesEnabled = true;
-	static readonly isPeopleInSpaceEnabled = true;
+	static readonly isPeopleInSpaceEnabled = false;
 
 	static readonly available = {
 		neo: "neo",

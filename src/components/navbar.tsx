@@ -8,8 +8,11 @@ import { Features } from "~/features";
 
 const navigation = [
 	{ name: "Home", path: "/" },
-	{ name: "People In Space", path: "/peopleinspace" },
 ];
+
+if (Features.isEnabled(Features.available.peopleInSpace)) {
+	navigation.push({ name: "People In Space", path: "/peopleinspace" });
+}
 
 if (Features.isEnabled(Features.available.upcomingLaunches)) {
 	navigation.push({ name: "Upcoming Launches", path: "/upcominglaunches" });

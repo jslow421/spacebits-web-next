@@ -24,7 +24,7 @@ export default function Home() {
 					</ul>
 					<p className="text-gray-600 mt-6 text-lg leading-8">Working features:</p>
 					<ul className="">
-						{/* <li>People in Space</li> */}
+						<li>People in Space</li>
 						<li>Daily near earth objects</li>
 						<li>Upcoming launches</li>
 					</ul>

@@ -1,10 +1,12 @@
 export class Features {
 	static readonly isNeoEnabled = true;
 	static readonly isUpcomingLaunchesEnabled = true;
+	static readonly isPeopleInSpaceEnabled = false;
 
 	static readonly available = {
 		neo: "neo",
 		upcomingLaunches: "upcomingLaunches",
+		peopleInSpace: "peopleInSpace",
 	};
 
 	static isEnabled(feature: string): boolean {
@@ -19,6 +21,8 @@ export class Features {
 				return Features.isNeoEnabled;
 			case this.available.upcomingLaunches:
 				return Features.isUpcomingLaunchesEnabled;
+			case this.available.peopleInSpace:
+				return Features.isPeopleInSpaceEnabled;
 			default:
 				return false;
 		}

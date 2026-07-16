@@ -1,5 +1,5 @@
 "use client";
-import { Dialog } from "@headlessui/react";
+import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,7 +59,7 @@ export default function Navbar() {
 			</nav>
 			<Dialog as="div" className="lg:hidden" onClose={() => setMobileMenuOpen(false)} open={mobileMenuOpen}>
 				<div className="fixed inset-0 z-10" />
-				<Dialog.Panel
+				<DialogPanel
 					className="sm:ring-gray-900/10 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto
                 bg-white px-6 py-6 sm:max-w-sm sm:ring-1"
 				>
@@ -100,7 +100,7 @@ export default function Navbar() {
 							</div>
 						</div>
 					</div>
-				</Dialog.Panel>
+				</DialogPanel>
 			</Dialog>
 		</header>
 	);

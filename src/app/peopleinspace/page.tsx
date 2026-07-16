@@ -15,26 +15,24 @@ export default function PeopleInSpace() {
 		update_date: "",
 	});
 
-	async function retrievePeople() {
-		try {
-			const resp = await axios.get(Configuration.PEOPLE_IN_SPACE_URL, {
-				headers: {
-					"Content-Type": "application/json",
-				},
-			});
-
-			setPeopleModel(resp.data);
-		} catch (e) {
-			console.warn(e);
-		} finally {
-			setIsLoading(false);
-		}
-	}
-
 	useEffect(() => {
 		document.title = "People In Space - SpaceBits";
-		setIsLoading(true);
-		retrievePeople();
+
+		(async () => {
+			try {
+				const resp = await axios.get(Configuration.PEOPLE_IN_SPACE_URL, {
+					headers: {
+						"Content-Type": "application/json",
+					},
+				});
+
+				setPeopleModel(resp.data);
+			} catch (e) {
+				console.warn(e);
+			} finally {
+				setIsLoading(false);
+			}
+		})();
 	}, []);
 
 	return (

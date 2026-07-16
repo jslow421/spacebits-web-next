@@ -11,27 +11,25 @@ export default function UpcomingLaunchesView() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [launchesModel, setLaunchesModel] = useState<UpcomingLaunches>();
 
-	async function retrieveUpcomingLaunches() {
-		setIsLoading(true);
-		try {
-			const resp = await axios.get(Configuration.UPCOMING_LAUNCHES_URL, {
-				headers: {
-					"content-type": "application/json",
-					"x-api-key": Configuration.API_KEY,
-				},
-			});
-
-			setLaunchesModel(resp.data);
-		} catch (e) {
-			console.warn(e);
-		} finally {
-			setIsLoading(false);
-		}
-	}
-
 	useEffect(() => {
 		document.title = "Upcoming Launches - SpaceBits";
-		retrieveUpcomingLaunches();
+
+		(async () => {
+			try {
+				const resp = await axios.get(Configuration.UPCOMING_LAUNCHES_URL, {
+					headers: {
+						"content-type": "application/json",
+						"x-api-key": Configuration.API_KEY,
+					},
+				});
+
+				setLaunchesModel(resp.data);
+			} catch (e) {
+				console.warn(e);
+			} finally {
+				setIsLoading(false);
+			}
+		})();
 	}, []);
 
 	return (

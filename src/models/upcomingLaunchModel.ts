@@ -23,7 +23,7 @@ export interface Result {
 	name: string;
 	pad: Pad;
 	provider: Provider;
-	quick_text: any;
+	quick_text: unknown;
 	slug: string;
 	sort_date: string;
 	suborbital: boolean;
@@ -76,6 +76,6 @@ export interface Vehicle {
 	company_id: number;
 	id: number;
 	name: string;
-	pad: any;
+	pad: unknown;
 	slug: string;
 }

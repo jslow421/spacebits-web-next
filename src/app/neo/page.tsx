@@ -21,27 +21,25 @@ export default function NeoPage() {
 		updated_date_time: "",
 	});
 
-	async function retrieveNeo() {
-		try {
-			setIsLoading(true);
-			const resp = await axios.get(Configuration.NEO_URL, {
-				headers: {
-					"content-type": "application/json",
-					"x-api-key": Configuration.API_KEY,
-				},
-			});
-
-			setNeoModel(resp.data);
-		} catch (e) {
-			console.warn(e);
-		} finally {
-			setIsLoading(false);
-		}
-	}
-
 	useEffect(() => {
 		document.title = "Near Earth Objects - SpaceBits";
-		retrieveNeo();
+
+		(async () => {
+			try {
+				const resp = await axios.get(Configuration.NEO_URL, {
+					headers: {
+						"content-type": "application/json",
+						"x-api-key": Configuration.API_KEY,
+					},
+				});
+
+				setNeoModel(resp.data);
+			} catch (e) {
+				console.warn(e);
+			} finally {
+				setIsLoading(false);
+			}
+		})();
 	}, []);
 
 	return (
